@@ -1,0 +1,261 @@
+
+:host {
+  display: block;
+  color: #172B2A;
+  background: #F7F3EB;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.navbar {
+  min-height: 76px;
+  padding: 18px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #172B2A;
+  color: #F7F3EB;
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.brand span {
+  color: #C6A15B;
+}
+
+.nav-label,
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
+
+.nav-label {
+  color: #C6A15B;
+}
+
+.hero {
+  min-height: 410px;
+  padding: 85px 10%;
+  background: #172B2A;
+  color: #F7F3EB;
+}
+
+.eyebrow {
+  color: #A98745;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 70px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.intro {
+  max-width: 490px;
+  color: #D7DDD7;
+  line-height: 1.8;
+  margin: 20px 0 28px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 22px;
+  background: #C6A15B;
+  color: #172B2A;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.services,
+.request-section {
+  padding: 65px 8%;
+}
+
+.services h2,
+.request-section h2 {
+  margin: 0 0 28px;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  padding: 27px 20px;
+  min-height: 190px;
+  text-align: left;
+  border: 1px solid #E0D7C6;
+  background: #FFFDF8;
+  color: #172B2A;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: #C6A15B;
+}
+
+.service-icon {
+  color: #A98745;
+  font-size: 29px;
+}
+
+.service-card h3 {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.service-card p,
+.form-heading > p:last-child {
+  color: #68716B;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.request-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  background: #EEE7D9;
+}
+
+.form-heading h2 {
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #D7CEBE;
+  border-radius: 2px;
+  background: #FFFDF8;
+  color: #172B2A;
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #C6A15B;
+  outline-offset: 1px;
+}
+
+.submit-button {
+  margin-top: 12px;
+  padding: 15px;
+  border: none;
+  background: #172B2A;
+  color: #F7F3EB;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #284441;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 12px;
+  background: #FFFDF8;
+  color: #172B2A;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  padding: 35px 8%;
+  text-align: center;
+  background: #172B2A;
+  color: #F7F3EB;
+}
+
+footer .brand {
+  font-size: 20px;
+}
+
+footer p {
+  color: #D7DDD7;
+}
+
+footer small {
+  color: #C6A15B;
+}
+
+@media (max-width: 800px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .request-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+  }
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .services,
+  .request-section {
+    padding: 45px 6%;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,166 @@
+
+:root {
+    --green: #172B2A;
+    --ivory: #F7F3EB;
+    --gold: #C6A15B;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--ivory);
+    color: var(--green);
+}
+
+header {
+    background: var(--green);
+    color: var(--ivory);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    color: var(--gold);
+}
+
+nav a {
+    color: var(--ivory);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    background: var(--green);
+    color: var(--ivory);
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.gold {
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: var(--gold);
+    color: var(--green);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+section:not(.hero) {
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #B9B3A7;
+    border-radius: 5px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: var(--green);
+    color: var(--ivory);
+    border: 2px solid var(--gold);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: var(--gold);
+    color: var(--green);
+}
+
+#message {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--green);
+    color: var(--ivory);
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px 5px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+}

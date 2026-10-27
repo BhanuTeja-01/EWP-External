@@ -1,0 +1,99 @@
+
+<div class="page">
+  <header class="navbar">
+    <div class="brand">THE <span>GRAND</span></div>
+    <div class="nav-label">HOTEL SERVICE PORTAL</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">WELCOME TO THE GRAND</p>
+      <h1>Luxury, Comfort<br />& Care.</h1>
+      <p class="intro">
+        Experience exceptional hospitality. Request your hotel services
+        with just a few clicks.
+      </p>
+      <a href="#request" class="hero-button">REQUEST A SERVICE ↓</a>
+    </section>
+
+    <section class="services">
+      <p class="eyebrow">MADE FOR YOUR COMFORT</p>
+      <h2>Our Services</h2>
+
+      <div class="service-grid">
+        <button type="button" class="service-card"
+          (click)="service = 'Room Cleaning'">
+          <span class="service-icon">✧</span>
+          <h3>Room Cleaning</h3>
+          <p>Keep your space fresh and comfortable.</p>
+        </button>
+
+        <button type="button" class="service-card"
+          (click)="service = 'Food Order'">
+          <span class="service-icon">♨</span>
+          <h3>Food Order</h3>
+          <p>Enjoy delicious meals in your room.</p>
+        </button>
+
+        <button type="button" class="service-card"
+          (click)="service = 'Laundry'">
+          <span class="service-icon">◇</span>
+          <h3>Laundry</h3>
+          <p>Fresh clothes, delivered with care.</p>
+        </button>
+
+        <button type="button" class="service-card"
+          (click)="service = 'Room Service'">
+          <span class="service-icon">☆</span>
+          <h3>Room Service</h3>
+          <p>We're here to make your stay better.</p>
+        </button>
+      </div>
+    </section>
+
+    <section class="request-section" id="request">
+      <div class="form-heading">
+        <p class="eyebrow">WE'RE HERE TO HELP</p>
+        <h2>Request a Service</h2>
+        <p>Fill in your details and our team will take care of the rest.</p>
+      </div>
+
+      <form (ngSubmit)="submitRequest()" #requestForm="ngForm">
+        <label for="guestName">Guest Name</label>
+        <input id="guestName" name="name" type="text"
+          [(ngModel)]="name" required placeholder="Enter your full name" />
+
+        <label for="room">Room Number</label>
+        <input id="room" name="room" type="number"
+          [(ngModel)]="room" required min="1" placeholder="e.g. 101" />
+
+        <label for="service">Select Service</label>
+        <select id="service" name="service" [(ngModel)]="service" required>
+          <option>Room Cleaning</option>
+          <option>Food Order</option>
+          <option>Laundry</option>
+          <option>Room Service</option>
+        </select>
+
+        <label for="details">Additional Details</label>
+        <textarea id="details" name="details"
+          [(ngModel)]="details" rows="3"
+          placeholder="Tell us what you need (optional)"></textarea>
+
+        <button class="submit-button" type="submit"
+          [disabled]="loading || requestForm.invalid">
+          {{ loading ? 'SUBMITTING...' : 'SUBMIT REQUEST →' }}
+        </button>
+
+        <p class="message" role="status" aria-live="polite"
+          *ngIf="message">{{ message }}</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand">THE <span>GRAND</span></div>
+    <p>Thoughtful hospitality. Unforgettable comfort.</p>
+    <small>© 2026 The Grand Hotel Service Portal</small>
+  </footer>
+</div>
